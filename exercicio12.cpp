@@ -26,13 +26,13 @@ int main(){
         } else if (presenca >= 75 && presenca < 100) {
             cout << "Aprovado" << endl;
         } else {
-            cout << "Reprovado." << endl;
+            cout << "Reprovado" << endl;
         }
-    } else if (5 <= media < 7){
+    } else if (media >= 5 && media < 7){
         cout << "Recuperacao" << endl;
     } else {
         cout << "Reprovado" << endl;
     }
 
-    return false;
+    return false; 
 }
