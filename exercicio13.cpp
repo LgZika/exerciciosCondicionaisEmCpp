@@ -6,40 +6,57 @@ Escreva um programa para cálculo de recuperação em C++. Para estar em recuper
 
 using namespace std;
 
+float mediaNotas(float n1, float n2, float n3, float media){
+    media = (n1 + n2 + n3) / 3;
+    return media;
+}
+
+void recuperacao(float media){
+    float notaRecuperacao;
+
+    cout << "Entre com a nota da Recuperacao: ";
+    cin >> notaRecuperacao;
+    
+    if (media + notaRecuperacao >= 10){
+        cout << "Aprovado!" << endl;
+    } else {
+        cout << "Reprovado." << endl;
+    }
+}
+
 void verificaNota(float media, float presenca){
     if (media >= 7){
         if (presenca == 100) {
             cout << "Aprovado! Parabens!" << endl;
         } else if (presenca >= 75 && presenca < 100) {
-            cout << "Aprovado" << endl;
+            cout << "Aprovado!" << endl;
         } else {
-            cout << "Reprovado" << endl;
+            cout << "Reprovado." << endl;
         }
     } else if (media >= 5 && media < 7){
-        cout << "Recuperacao" << endl;
+        if (presenca >= 75) {
+            recuperacao(media);
+        } else {
+            cout << "Reprovado." << endl;
+        }
     } else {
-        cout << "Reprovado" << endl;
+        cout << "Reprovado." << endl;
     }
 }
 
-float mediaNotas(float n1, float n2, float n3){
-    int media = (n1 + n2 + n3) / 3;
-    return media;
-}
-
 int main(){
-    float nota1, nota2, nota3, notaRecuperacao, media, notaFinal, presenca;
+    float n1, n2, n3, notaRecuperacao, media, notaFinal, presenca;
     
     cout << "Entre com a primeira nota: ";
-    cin >> nota1;
+    cin >> n1;
     cout << "Entre com a segunda nota: ";
-    cin >> nota2;
+    cin >> n2;
     cout << "Entre com a terceira nota: ";
-    cin >> nota3;
+    cin >> n3;
     cout << "Entre com a presenca em porcentagem: ";
     cin >> presenca;
-   
-    media = mediaNotas(nota1, nota2, nota3);
+
+    media = mediaNotas(n1, n2, n3, media);
     verificaNota(media, presenca);
     
     return false; 
