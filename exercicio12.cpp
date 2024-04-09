@@ -25,8 +25,14 @@ int main(){
             cout << "Aprovado! Parabens!" << endl;
         } else if (presenca >= 75 && presenca < 100) {
             cout << "Aprovado" << endl;
-        } 
-    } 
+        } else {
+            cout << "Reprovado." << endl;
+        }
+    } else if (5 <= media < 7){
+        cout << "Recuperacao" << endl;
+    } else {
+        cout << "Reprovado" << endl;
+    }
 
     return false;
 }
