@@ -28,13 +28,19 @@ int main(){
             z = x * y;
             break;
         case '/':
-            z = x / y;
+            if (y != 0){
+                z = x / y;
+            } else {
+                cout << "Não Existe Divisão por 0" << endl; 
+                return 1;
+            }
             break;
         case '%':
             z = x % y;
             break;
         default:
             cout << "Nao aceitamos essa operacao" << endl;
+            return 1;
             break;
     }
 
