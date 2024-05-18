@@ -16,11 +16,11 @@ int main(){
     cout << "Entre com o terceiro lado" << endl;
     cin >> z;
     
-    if (x == y == z) {
+    if (x == y && x == z) {
         cout << "Triangulo Equilatero" << endl;
-    } if (x == y != z || x != y == z || x == z != y){
+    } if ((x == y && x != z) || (x == z && x != y) || (y == z && y != x)){
         cout << "Triangulo Isoceles" << endl;
-    } else if (x != y != z) {
+    } else if (x != y && x != z) {
         cout << "Triangulo Escaleno" << endl;
     }
     return false;
